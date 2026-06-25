@@ -35,7 +35,7 @@ Una app móvil que:
 ## Estado actual de fases
 
 - Fase 0 — Diagnóstico del PDF: ✅ COMPLETADO (24/06/2026)
-- Fase 1 — Motor Python: ⬜ PENDIENTE
+- Fase 1A — Motor Python (seguro, solo reporte + --aplicar): ✅ COMPLETADO (24/06/2026)
 - Fase 2 — API REST FastAPI: ⬜ PENDIENTE
 - Fase 3 — App React Native: ⬜ PENDIENTE
 - Fase 4 — Pulido y producción: ⬜ PENDIENTE
@@ -46,6 +46,16 @@ Una app móvil que:
 - **Precios detectados:** 11 (en formato pesos colombiano: $1.500.000,00)
 - **Patrón numérico dominante:** pesos_colombiano (punto como separador de miles, coma como decimal, prefijo $ opcional)
 - **Conclusión:** LISTO PARA FASE 1 — no requiere OCR
+
+## Resultados Fase 1A — Motor seguro de procesamiento
+- **Fecha:** 24/06/2026
+- **Versión PyMuPDF instalada:** 1.27.2.3
+- **Estrategia de edición PDF:** superposición controlada (rectángulo blanco + nuevo texto con PyMuPDF)
+- **Detección de tabla:** Adaptada para encabezados multi-línea en mismo bloque (formato TEXCOL real)
+- **Columnas autorizadas por defecto:** V. Unit, Valor Total
+- **Totales protegidos:** Sub Total, Total Bruto, + Total IVA, Total a Pagar no se modifican
+- **Modo seguro:** Por defecto solo genera reporte JSON; requiere `--aplicar` para modificar PDF
+- **Prueba sobre PDF real:** 16 valores detectados, 8 modificables (V. Unit + Valor Total en detalle), 8 modificados con `--aplicar`
 
 ## URL Backend Producción
 (pendiente — completar después de Fase 2)
@@ -62,4 +72,4 @@ Una app móvil que:
 3. Describe el problema o tarea siguiente
 4. Claude generará el prompt para continuar
 
-*Última actualización: 24/06/2026 — Fase 0 completada, proyecto listo para Fase 1.*
+*Última actualización: 24/06/2026 — Fase 0 y Fase 1A completadas, motor seguro funcional.*
